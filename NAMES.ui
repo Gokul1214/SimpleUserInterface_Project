@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.1">
+  <object class="ttk.Frame" id="top_frame">
+    <property name="height">200</property>
+    <property name="padding">5</property>
+    <property name="width">200</property>
+    <layout manager="grid">
+      <property name="column">0</property>
+      <property name="propagate">True</property>
+      <property name="row">0</property>
+      <property name="sticky">nsew</property>
+      <property id="0" name="weight" type="col">1</property>
+      <property id="0" name="weight" type="row">1</property>
+    </layout>
+    <child>
+      <object class="ttk.Frame" id="input_frame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="sticky">ew</property>
+          <property id="0" name="weight" type="col">1</property>
+        </layout>
+        <child>
+          <object class="ttk.Entry" id="name_entry">
+            <property name="font">TkDefaultFont</property>
+            <bind add="" handler="name_change" sequence="&lt;KeyRelease&gt;" />
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+              <property id="0" name="weight" type="col">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="gender">
+            <property name="text" translatable="yes">Gender</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">e</property>
+              <property id="1" name="weight" type="col">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Combobox" id="gender_combo">
+            <property name="state">readonly</property>
+            <bind add="" handler="gender_selected" sequence="&lt;&lt;ComboboxSelected&gt;&gt;" />
+            <layout manager="grid">
+              <property name="column">2</property>
+              <property name="padx">5</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">e</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="pygubu.builder.widgets.scrollbarhelper" id="scroller">
+        <property name="padding">5</property>
+        <property name="scrolltype">both</property>
+        <property name="usemousewheel">false</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+          <property name="sticky">nsew</property>
+          <property id="0" name="weight" type="col">1</property>
+          <property id="1" name="weight" type="row">1</property>
+        </layout>
+        <child>
+          <object class="ttk.Treeview" id="names_table">
+            <property name="height">15</property>
+            <property name="selectmode">browse</property>
+            <property name="show">headings</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="sticky">nsew</property>
+              <property id="0" name="weight" type="col">1</property>
+              <property id="0" name="weight" type="row">1</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
